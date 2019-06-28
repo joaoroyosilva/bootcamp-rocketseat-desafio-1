@@ -61,10 +61,6 @@ server.delete("/projects/:id", checkId, (req, res) => {
   const { id } = req.params;
   let index = projects.findIndex(proj => proj.id == id);
   projects.splice(index, 1);
-  return res.json("ok");
-});
-
-server.get("/", (req, res) => {
   return res.json({ message: "Project deleted" });
 });
 
